@@ -1,0 +1,778 @@
+// Importing Poppins Font from Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+// For customizing the variables go to => vendor/bootstrap/scss/abstract/_custom_variable.scss
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $mainFont;
+}
+
+// Primary Button Styling
+.btn-primary {
+  //Background Radiant
+  background-image: linear-gradient(to right, $c1, $c2, $c2, $c1) !important;
+  background-size: 200%;
+  background-position: left;
+  transition: background-position 1s ease-in-out;
+  border-radius: 12px;
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: $c3;
+}
+
+.btn-primary:hover {
+  background-position: right;
+}
+
+.btn-secondary {
+  border: 1px solid $c3;
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 16px;
+  color: $c3;
+  transition: border ease-in-out 0.3s;
+}
+
+// Below 280px dont show the Big Ellipses at BG for clean look
+.dontShow {
+  @media (max-width: 280px) {
+    display: none;
+  }
+}
+
+// Header Styling
+
+header {
+  position: relative;
+}
+
+// Navbar scroll down fixed styling
+.fixed {
+  position: fixed;
+  z-index: 6;
+  padding-top: 0.8rem !important;
+  padding-bottom: 0.8rem !important;
+  animation: scrollDownAnimation 0.5s normal;
+}
+
+@keyframes scrollDownAnimation {
+  0% {
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.nav-link {
+  font-weight: 400;
+  line-height: 24px;
+  stroke: solid $c4;
+  margin: 0 0.3rem 0 0.3rem;
+  z-index: 5;
+  position: relative;
+}
+
+.navbar-brand {
+  z-index: 5;
+  position: relative;
+}
+
+.navbar-toggler {
+  z-index: 5;
+}
+
+.EllipseBig1 {
+  position: absolute;
+  z-index: 3;
+  left: -200px;
+  top: -250px;
+
+  border-radius: 70%;
+  max-width: 550px;
+  height: 480px;
+  width: 130%;
+
+  opacity: 35%;
+  background: radial-gradient(
+    circle at center,
+    $blue1 0%,
+    $blue2 50%,
+    $blue3 60%,
+    transparent 70%
+  );
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  @media (min-width: 580px) {
+    & {
+      border-radius: 50%;
+      width: 100%;
+      max-width: 750px;
+      height: 750px;
+    }
+  }
+}
+
+.navSignIn {
+  @media (max-width: 990px) {
+    & {
+      display: none;
+    }
+  }
+}
+
+// Banner Styling Section 1
+
+.banner {
+  position: relative;
+}
+
+.bannerHeading {
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 167%;
+  text-transform: capitalize;
+  z-index: 4;
+  color: $c3;
+  position: relative;
+
+  @media (max-width: 260px) {
+    font-size: 100%;
+  }
+}
+
+.bannerPara {
+  position: relative;
+  z-index: 4;
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 178%;
+  color: $c5;
+
+  @media (max-width: 260px) {
+    font-size: 70%;
+  }
+}
+
+.bannerLeftBottom {
+  position: relative;
+  z-index: 4;
+  @media (max-width: 280px) {
+    flex-direction: column;
+  }
+}
+
+.bannerRightImg {
+  @media (max-width: 990px) {
+    padding-top: 3rem;
+  }
+  position: relative;
+  z-index: 4;
+}
+
+.vectorContainer {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  @media (min-width: 2500px) {
+    display: none;
+  }
+}
+
+.EllipseBig2 {
+  position: absolute;
+  z-index: 3;
+  right: 0px;
+  bottom: -150px;
+
+  border-radius: 70%;
+  max-width: 450px;
+  height: 380px;
+  width: 130%;
+
+  opacity: 35%;
+  background: radial-gradient(
+    circle at center,
+    $purple1 0%,
+    $purple2 50%,
+    $purple3 60%,
+    transparent 70%
+  );
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  @media (min-width: 580px) {
+    & {
+      border-radius: 50%;
+      width: 100%;
+      max-width: 550px;
+      height: 550px;
+      bottom: -250px;
+    }
+  }
+}
+
+// Small Ellipses styling
+
+.smallEllipsesContainer {
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.smallEllipse3 {
+  position: inherit;
+  top: 5%;
+  left: 5%;
+}
+
+.smallEllipse5 {
+  position: inherit;
+  top: 70%;
+  left: 35%;
+}
+
+.smallEllipse1 {
+  position: inherit;
+  top: 85%;
+  left: 3%;
+}
+
+.smallEllipse2 {
+  position: inherit;
+  top: 6%;
+  left: 70%;
+}
+.smallEllipse4 {
+  position: inherit;
+  top: 30%;
+  left: 90%;
+}
+
+.smallEllipse6 {
+  position: inherit;
+  top: 85%;
+  left: 50%;
+}
+
+// Advertisement container styling
+
+.advertisementContainer {
+  position: relative;
+  & > .container {
+    position: relative;
+    z-index: 4;
+  }
+}
+
+// Background Granim Styling for advertisement panel background
+#canvas-basic {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.companiesNames {
+  flex-wrap: wrap;
+}
+
+// Service Section || Section 1
+
+.serviceSection {
+  position: relative;
+  z-index: 3;
+}
+
+// Service Section Top
+
+.serviceSectionTopHeading {
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  text-transform: capitalize;
+  color: $c3;
+  position: relative;
+  z-index: 4;
+  @media (max-width: 260px) {
+    font-size: 100%;
+  }
+}
+
+.serviceSectionTopSupporting {
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 200%;
+  font-size: 16px;
+  position: relative;
+  z-index: 4;
+
+  color: $c5;
+
+  @media (max-width: 260px) {
+    font-size: 70%;
+  }
+}
+
+// Service Section Bottom
+
+.serviceCard {
+  border-radius: 16px;
+  border: 1px solid $c5;
+  background: $cardBackgroundColor;
+  backdrop-filter: blur(22px);
+  text-align: center;
+  min-height: 312px;
+  max-width: 384px;
+  user-select: none;
+  position: inherit;
+  z-index: 4;
+
+  & > h5 {
+    color: $c3;
+    font-family: $mainFont;
+    font-weight: 600;
+  }
+
+  & > p {
+    color: $c5;
+    font-family: $mainFont;
+    line-height: 28px;
+  }
+}
+
+.serviceCard:hover {
+  background-image: linear-gradient(136deg, $c2 0%, $c1 100%);
+  cursor: pointer;
+  & > p {
+    color: $c3;
+  }
+}
+
+.serviceIcon {
+  width: 80px;
+  height: 80px;
+  border-radius: 80px;
+  background: $c6;
+}
+
+.EllipseBig3 {
+  position: absolute;
+  z-index: inherit;
+  left: -200px;
+  bottom: -250px;
+
+  border-radius: 70%;
+  max-width: 350px;
+  height: 280px;
+  width: 130%;
+
+  opacity: 35%;
+  background: radial-gradient(
+    circle at center,
+    $blue1 0%,
+    $blue2 50%,
+    $blue3 60%,
+    transparent 70%
+  );
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  @media (min-width: 580px) {
+    & {
+      border-radius: 50%;
+      width: 100%;
+      max-width: 550px;
+      height: 500px;
+    }
+  }
+}
+
+// Promoting Section || Section 2
+
+.promotingSectionLeft {
+  & > h3 {
+    position: relative;
+    z-index: 4;
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: $c3;
+
+    @media (max-width: 260px) {
+      font-size: 100%;
+    }
+  }
+
+  & > p {
+    position: relative;
+    z-index: 4;
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 200%;
+    color: $c5;
+
+    @media (max-width: 260px) {
+      font-size: 70%;
+    }
+  }
+}
+
+.promotingSectionRight {
+  position: relative;
+  border-right: 2px solid $c2;
+  height: 600px;
+  @media (max-width: 990px) {
+    margin-top: 8rem;
+  }
+}
+
+// Promoting Section Right Bg Gradient Pic Background Div Styling
+
+.promotingSectionRightBgPic {
+  background: linear-gradient(90deg, $c7 0%, $c8 100%);
+  position: absolute;
+  right: 0%;
+  height: 480px;
+  width: 80%;
+  z-index: 4;
+
+  @media (max-width: 580px) {
+    height: 360px;
+  }
+}
+
+.promotingImg {
+  position: absolute;
+  right: 0%;
+  width: 92%;
+  height: 320px;
+  z-index: 4;
+
+  @media (max-width: 580px) {
+    height: 230px;
+  }
+}
+
+// Pricing Section || Section 3
+
+.pricingSection {
+  position: relative;
+}
+
+.EllipseBig4 {
+  position: absolute;
+  z-index: 3;
+  right: 75px;
+  top: 550px;
+
+  border-radius: 70%;
+  max-width: 450px;
+  height: 280px;
+  width: 100%;
+
+  opacity: 35%;
+  background: radial-gradient(
+    circle at center,
+    $purple1 0%,
+    $purple2 50%,
+    $purple3 60%,
+    transparent 70%
+  );
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  @media (min-width: 580px) {
+    & {
+      border-radius: 50%;
+      width: 100%;
+      max-width: 450px;
+      height: 450px;
+      bottom: -250px;
+    }
+  }
+}
+
+.pricingSectionTop {
+  & > div > h3 {
+    position: relative;
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 60px;
+    text-align: center;
+
+    color: $c3;
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-image: linear-gradient(to right, $c1, $c2);
+      height: 4px;
+      width: 50%;
+      bottom: 0;
+      left: 25%;
+      border-radius: 5px;
+    }
+  }
+
+  & > div > p,
+  & > div > div > span {
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 180%;
+    text-align: center;
+
+    color: $c5;
+    line-break: strict;
+  }
+}
+
+.form-check-input {
+  height: 26px !important;
+  width: 52px !important;
+  cursor: pointer;
+}
+
+.pricingCard {
+  border-radius: 16px;
+  border: 1px solid $c5;
+  background: $cardBackgroundColor;
+  backdrop-filter: blur(22px);
+  max-width: 384px;
+  min-height: 516px;
+  cursor: pointer;
+  position: relative;
+  z-index: 4;
+}
+
+.priceValue {
+  & > h3 {
+    color: $c3;
+    font-family: $mainFont;
+    font-weight: 600;
+    @media (max-width: 260px) {
+      font-size: 100%;
+    }
+  }
+
+  & > span {
+    color: $c3;
+    font-family: $mainFont;
+    @media (max-width: 260px) {
+      font-size: 70%;
+    }
+  }
+}
+
+.subscriptionType {
+  & > h3 {
+    color: #1552f0;
+    font-family: $mainFont;
+    font-weight: 600;
+    @media (max-width: 260px) {
+      font-size: 100%;
+    }
+  }
+
+  & > p {
+    color: $c3;
+    font-family: $mainFont;
+    line-height: 26px;
+    @media (max-width: 260px) {
+      font-size: 70%;
+    }
+  }
+}
+
+.subscribeBenefits {
+  & > ul {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+    color: $c3;
+    font-family: $mainFont;
+    font-weight: 500;
+    & > li {
+      @media (max-width: 260px) {
+        font-size: 70%;
+      }
+      padding-left: 0.5rem;
+      &::marker {
+        // Here you can use svg of your own for list bullet points just past your svg link for css url here
+        //content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1em' viewBox='0 0 512 512'%3E%3C!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --%3E%3Cstyle%3Esvg%7Bfill:%232745ea%7D%3C/style%3E%3Cpath d='M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z'/%3E%3C/svg%3E");
+        content: '\f058';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        color: $c1;
+      }
+    }
+  }
+}
+
+// Selected Pricing Card
+.selected {
+  border: 1px solid $c2;
+}
+
+// Pricing card on hover styling
+
+.pricingCard:hover {
+  background-image: linear-gradient(136deg, $c1 0%, $c2 100%);
+  & > .subscriptionType > h3 {
+    color: $c3;
+  }
+
+  & > .subscribeBenefits > ul {
+    li {
+      &::marker {
+        color: $c4;
+      }
+    }
+  }
+
+  // On hover not available benefit styling
+  .notAvailableBenefit {
+    color: $c10;
+    font-weight: 500;
+    &::marker {
+      color: $c10 !important;
+    }
+  }
+}
+
+// Not available benefit dull color styling
+.notAvailableBenefit {
+  color: $c9;
+  font-weight: 500;
+  &::marker {
+    color: $c9 !important;
+  }
+}
+
+.pricingSectionInput {
+  @media (max-width: 260px) {
+    flex-direction: column;
+  }
+}
+
+.hrLine {
+  width: 95%;
+  height: 2px;
+  background: $c5;
+}
+
+// Footer Styling
+
+.footerSocialSection {
+  color: $c3;
+  font-family: $mainFont;
+  line-height: 28px;
+
+  & > .socialLinks > ul {
+    list-style: none;
+    & > li > a > svg {
+      color: $c5;
+      &:hover {
+        color: $c3;
+      }
+    }
+  }
+}
+
+.footerHeadings {
+  color: $c3;
+  font-family: $mainFont;
+  font-weight: 600;
+  padding-left: 2rem;
+  user-select: none;
+  @media (max-width: 990px) {
+    padding-top: 2rem;
+  }
+}
+
+.platformList,
+.aboutUsList,
+.supportList,
+.addressList {
+  & > ul {
+    list-style: none;
+    & > li {
+      padding-top: 1rem;
+    }
+  }
+  & > ul > li > a {
+    color: $c5;
+    font-family: $mainFont;
+    text-decoration: none;
+
+    &:hover {
+      color: $c3;
+    }
+  }
+}
+
+.addressList {
+  & > ul > li {
+    color: $c5;
+    font-family: $mainFont;
+    text-decoration: none;
+  }
+}
+
+.rightsReserved {
+  background: linear-gradient(136deg, $c11 0%, $c12 100%);
+}
+
+.rightsReservedColumn {
+  color: $c3;
+  font-family: $mainFont;
+}
+
+// Custom scroll bar styling
+
+body::-webkit-scrollbar {
+  width: 0.5em;
+  background-color: $c4;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: $c2;
+  outline: 1px solid $c1;
+  border-radius: 5px;
+}
